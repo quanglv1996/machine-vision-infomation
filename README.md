@@ -35,5 +35,19 @@ Where θ is the angular resolution (radians), λ is the wavelength of light (m),
 * ***The focal length of the lens*** describes the distance between the lens and the focused image on the sensor. As light passes through the lens it will either converge (positive focal length) or diverge (negative focal length), however within cameras the focal length is predominately positive. Shorter focal lengths converge the light more strongly (i.e. at a sharper angle) to focus the subject being imaged. Longer focal lengths, in comparison, converge the light less strongly (i.e. at a shallower angle) in order to focus the image.
 
 ![Angel Field of View](assets/FOV_C.png)
+
+Schematic depicting how focal length has an impact on the angular field of view (AFOV). The shorter the focal length, the larger the AFOV, and vice versa for longer focal length. This influences the size of the FOV. Red line indicates light from the bottom of the object, creating the top of the image; blue light is light that is taken from the horizontal; grey lines indicate light that is from the top of the object, creating the bottom of the image. The height of the image is indicated by h.
+
+## Calculating AFOV
+
+![Calculate Angle Field of View](assets/AFOV.png)
+
+$$
+AFOV(°) = \frac{2}{tan(\frac{h}{2F})}
+$$
+
+where ***h*** is the horizontal dimension of the sensor and ***F*** is the focal length of the camera lens.
 ## Reference
 [LENS CALCULATOR FOR STANDARD LENSES](https://www.get-cameras.com/Lenscalculator)
+
+[LENS CALCULATOR FOR STANDARD LENSES](https://www.omnicalculator.com/other/camera-field-of-view)
