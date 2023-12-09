@@ -25,6 +25,7 @@ It is also important to consider the resolution of the camera lens when determin
 $$
 θ = 1.22 * \frac{λ}{D}
 $$
+
 Where θ is the angular resolution (radians), λ is the wavelength of light (m), and D is the diameter of the lens (m).
 
 ## [Field of View (FoV)](https://www.princetoninstruments.com/learn/camera-fundamentals/field-of-view-and-angular-field-of-view)
