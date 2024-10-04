@@ -61,9 +61,9 @@ where ***h*** is the horizontal dimension of the sensor and ***F*** is the focal
 
 The formula to calculate **DOF** is:
 
-\[
+$
 DOF = \frac{2 \cdot N \cdot c \cdot H \cdot d}{(H - d)^2}
-\]
+$
 
 Where:
 - **N** = Aperture (f-stop)
