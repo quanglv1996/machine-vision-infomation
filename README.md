@@ -75,9 +75,9 @@ Where:
 
 The **hyperfocal distance** is the closest distance at which a lens can be focused while keeping objects at infinity acceptably sharp. It's calculated as:
 
-\[
+$$
 H = \frac{f^2}{N \cdot c}
-\]
+$$
 
 Where:
 - **f** = Focal length of the lens (in mm)
