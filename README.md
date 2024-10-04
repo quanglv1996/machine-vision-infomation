@@ -48,6 +48,85 @@ AFOV(°) = \frac{2}{tan(\frac{h}{2F})}
 $$
 
 where ***h*** is the horizontal dimension of the sensor and ***F*** is the focal length of the camera lens.
+
+## Depth of Field (DOF) Calculation Guide
+
+**Depth of Field (DOF)** refers to the range of distance within a photo that appears acceptably sharp. It depends on several key factors:
+- Focal length of the lens.
+- Aperture (f-number).
+- Distance to the subject.
+- Circle of Confusion (CoC).
+
+### Formula to Calculate DOF
+
+The formula to calculate **DOF** is:
+
+\[
+DOF = \frac{2 \cdot N \cdot c \cdot H \cdot d}{(H - d)^2}
+\]
+
+Where:
+- **N** = Aperture (f-stop)
+- **c** = Circle of Confusion (CoC)
+- **H** = Hyperfocal distance
+- **d** = Distance from the camera to the subject
+
+#### Hyperfocal Distance
+
+The **hyperfocal distance** is the closest distance at which a lens can be focused while keeping objects at infinity acceptably sharp. It's calculated as:
+
+\[
+H = \frac{f^2}{N \cdot c}
+\]
+
+Where:
+- **f** = Focal length of the lens (in mm)
+- **N** = Aperture (f-stop)
+- **c** = Circle of Confusion (CoC)
+
+#### Example of DOF Calculation
+
+To calculate DOF, we need to know:
+- **Focal length (f)**: The focal length of the lens.
+- **Aperture (N)**: The aperture setting (f-stop).
+- **Circle of Confusion (CoC)**: Typically based on the camera's sensor size (e.g., 0.030 mm for a full-frame camera).
+- **Subject distance (d)**: The distance from the camera to the subject.
+
+##### Example:
+
+Given the following values:
+- Focal length (**f**) = 50 mm
+- Aperture (**N**) = f/8
+- Circle of Confusion (**c**) = 0.030 mm
+- Subject distance (**d**) = 2000 mm (2 meters)
+
+You can calculate DOF using these formulas.
+
+### Python Code for DOF Calculation
+
+Here’s a Python code example to calculate **DOF**:
+
+```python
+def hyperfocal_distance(f, N, c):
+    """Calculate hyperfocal distance."""
+    return (f ** 2) / (N * c)
+
+def depth_of_field(f, N, c, d):
+    """Calculate Depth of Field (DOF)."""
+    H = hyperfocal_distance(f, N, c)
+    dof = (2 * N * c * H * d) / ((H - d) ** 2)
+    return dof
+
+# Example input values
+focal_length = 50  # in mm
+aperture = 8  # f-stop
+coc = 0.030  # Circle of Confusion in mm
+subject_distance = 2000  # in mm (2 meters)
+
+dof = depth_of_field(focal_length, aperture, coc, subject_distance)
+print(f"Depth of Field (DOF): {dof:.2f} mm")
+
+
 ## Reference
 [LENS CALCULATOR FOR STANDARD LENSES](https://www.get-cameras.com/Lenscalculator)
 
